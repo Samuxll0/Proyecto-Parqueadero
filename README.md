@@ -5,7 +5,7 @@ Descripciín basisca de su Proyecto de POO ...
 # Autores
 
 - Amed Santiago 
-- Samuel Ortiz
+- Samuel Ortiz  
 
 # Herramientas
 
