@@ -6,7 +6,7 @@ package co.edu.uniquindio.poo;
  * @since 2024 - 05
  * 
  */
-public class Puestos {
+public class Puesto {
     private final String numeroPuestos;
     private final String posicionX;
     private final String posicionY;
@@ -18,7 +18,7 @@ public class Puestos {
      * @param posicionX
      * @param posicionY
      */
-    public Puestos(String numeroPuestos, String posicionX, String posicionY){
+    public Puesto(String numeroPuestos, String posicionX, String posicionY){
 
         assert numeroPuestos != null && !numeroPuestos.isBlank(): "El numero de puestos no puede ser nulo";
         assert posicionX != null && !posicionX.isBlank(): "La posicion X no puede ser nula";
