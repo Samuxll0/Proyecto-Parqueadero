@@ -6,7 +6,7 @@ public class Historial {
 
     private LocalDateTime fechaEntrada;
 
-    public Historial(LocalDateTime fechaEntrada){
+    public Historial(LocalDateTime fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
@@ -14,9 +14,8 @@ public class Historial {
         return fechaEntrada;
     }
 
-    public void fechaSalida(){
-        
+    public void fechaSalida() {
+
     }
 
-    
 }
