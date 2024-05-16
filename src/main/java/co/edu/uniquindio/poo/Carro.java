@@ -2,9 +2,9 @@ package co.edu.uniquindio.poo;
 
 public class Carro extends Vehiculo {
 
-    public Carro(String placa, String modelo){
+    public Carro(String placa, String modelo, Propietario propietario) {
 
-        super (placa, modelo);
+        super(placa, modelo, propietario);
     }
-    
+
 }
