@@ -37,12 +37,15 @@ public class Moto extends Vehiculo {
 
     @Override
     public double getTarifaPorHora() {
-        if (velocidadMaxima >= 0 && velocidadMaxima <= 100) {
-            return 5.0;
-        } else if (velocidadMaxima > 100 && velocidadMaxima <= 150) {
-            return 7.0;
-        } else {
-            return 10.0;
+        switch (tipoMoto) {
+            case MOTO_CLASICA:
+                return 6.0;
+            
+            case MOTO_HIBRIDA:
+                return 8.0;
+
+            default:
+                return 4.0;
         }
     }
 }
