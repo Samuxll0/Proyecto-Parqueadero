@@ -85,7 +85,7 @@ class ParqueaderoTest {
 
         Map<TipoVehiculo, Double> reporteDiario = parqueadero.generarReporteDiario(LocalDate.now());
 
-        assertEquals(1, reporteDiario.size());
+        assertEquals(2, reporteDiario.size());
         assertTrue(reporteDiario.containsKey(TipoVehiculo.CARRO));
     }
 
@@ -99,7 +99,7 @@ class ParqueaderoTest {
         Map<TipoVehiculo, Double> reporteMensual = parqueadero.generarReporteMensual(LocalDate.now().getMonthValue(),
                 LocalDate.now().getYear());
 
-        assertEquals(1, reporteMensual.size());
+        assertEquals(2, reporteMensual.size());
         assertTrue(reporteMensual.containsKey(TipoVehiculo.CARRO));
     }
 

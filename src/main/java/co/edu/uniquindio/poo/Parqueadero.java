@@ -198,10 +198,13 @@ public class Parqueadero {
     }
 
     private Map<TipoVehiculo, Double> inicializarReporte() {
+
         Map<TipoVehiculo, Double> reporte = new HashMap<>();
+        
         for (TipoCarro tipoCarro : TipoCarro.values()) {
             reporte.put(tipoCarro.getTipoVehiculo(), 0.0);
         }
+        
         for (TipoMoto tipoMoto : TipoMoto.values()) {
             reporte.put(tipoMoto.getTipoVehiculo(), 0.0);
         }
@@ -209,11 +212,14 @@ public class Parqueadero {
     }
 
     private boolean esFechaIgual(Registro registro, LocalDate fecha) {
+        
         return registro.getFechaEntrada().toLocalDate().equals(fecha);
     }
 
     private boolean esMesYAñoIguales(Registro registro, int mes, int año) {
+        
         LocalDate fechaEntrada = registro.getFechaEntrada().toLocalDate();
+        
         return fechaEntrada.getMonthValue() == mes && fechaEntrada.getYear() == año;
     }
 
@@ -225,6 +231,7 @@ public class Parqueadero {
             reporte.compute(TipoVehiculo.MOTO, (tipo, acumulado) -> (acumulado == null) ? costo : acumulado + costo);
         } else if (vehiculo instanceof Carro) {
             TipoCarro tipoCarro = ((Carro) vehiculo).getTipoCarro();
+            
             if (tipoCarro != null) {
                 reporte.compute(tipoCarro.getTipoVehiculo(),
                         (tipo, acumulado) -> (acumulado == null) ? costo : acumulado + costo);
