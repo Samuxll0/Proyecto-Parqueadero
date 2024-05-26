@@ -2,11 +2,10 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class Parqueadero {
@@ -14,7 +13,7 @@ public class Parqueadero {
     private final Collection<Moto> motos;
     private final Collection<Carro> carros;
     private final Puesto[][] puestos;
-    private final ArrayList<Registro> historialRegistros = new ArrayList<>();
+    private final LinkedList<Registro> historialRegistros = new LinkedList<>();
 
     public Parqueadero(int columnas, int filas) {
         assert columnas > 0 : "El número de columnas debe ser mayor a cero";
@@ -167,7 +166,7 @@ public class Parqueadero {
         return false;
     }
 
-    public ArrayList<Registro> getHistorialRegistros() {
+    public LinkedList<Registro> getHistorialRegistros() {
         return historialRegistros;
     }
 

@@ -9,6 +9,7 @@ public class Moto extends Vehiculo {
         super(placa, modelo, propietario);
         
         assert velocidadMaxima > 0 : "La velocidad máxima debe ser mayor a 0 (cero)";
+        
         this.velocidadMaxima = velocidadMaxima;
         this.tipoMoto = tipoMoto;
     }
