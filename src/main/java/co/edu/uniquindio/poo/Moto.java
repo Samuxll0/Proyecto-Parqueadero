@@ -7,9 +7,8 @@ public class Moto extends Vehiculo {
 
     public Moto(String placa, int modelo, Propietario propietario, int velocidadMaxima, TipoMoto tipoMoto) {
         super(placa, modelo, propietario);
-
+        
         assert velocidadMaxima > 0 : "La velocidad máxima debe ser mayor a 0 (cero)";
-
         this.velocidadMaxima = velocidadMaxima;
         this.tipoMoto = tipoMoto;
     }
@@ -37,15 +36,12 @@ public class Moto extends Vehiculo {
 
     @Override
     public double getTarifaPorHora() {
-        switch (tipoMoto) {
-            case MOTO_CLASICA:
-                return 6.0;
-            
-            case MOTO_HIBRIDA:
-                return 8.0;
-
-            default:
-                return 4.0;
+        if (velocidadMaxima >= 0 && velocidadMaxima <= 100) {
+            return 5.0;
+        } else if (velocidadMaxima > 100 && velocidadMaxima <= 150) {
+            return 7.0;
+        } else {
+            return 10.0;
         }
     }
 }
