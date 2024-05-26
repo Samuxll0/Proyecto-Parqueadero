@@ -1,23 +1,25 @@
 package co.edu.uniquindio.poo;
 
-/**
- * Clase de tipo registro que agrupa los datos de un propietario.
- * 
- * @author Samuel Ortiz, Amed Vargas.
- * @since 2024 - 05
- * 
- */
-public record Propietario(String nombre, String apellido) {
+public class Propietario {
+    private String nombre;
 
-    /**
-     * Metodo constructor de la clase propietario.
-     * 
-     * @param nombre
-     * @param apellido
-     * 
-     */
-    public Propietario {
-        assert nombre != null : "El nombre no puede ser nulo";
-        assert apellido != null : "El apellido no puede ser nulo";
+    public Propietario(String nombre) {
+        assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
+
+        this.nombre = nombre;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
 }

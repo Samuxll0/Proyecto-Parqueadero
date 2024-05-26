@@ -1,59 +1,48 @@
 package co.edu.uniquindio.poo;
 
-/**
- * Clase que agrupa la informacion de unos puestos
- * @author Samuel Ortiz, Amed Vargas
- * @since 2024 - 05
- * 
- */
 public class Puesto {
-    private final String numeroPuestos;
-    private final String posicionX;
-    private final String posicionY;
+    private int posicionI;
+    private int posicionJ;
+    private Vehiculo vehiculo;
 
-    /**
-     * Constructor de la clase puestos
-     * 
-     * @param numeroPuestos
-     * @param posicionX
-     * @param posicionY
-     */
-    public Puesto(String numeroPuestos, String posicionX, String posicionY){
+    public Puesto(int posicionI, int posicionJ, Vehiculo vehiculo, int columnas, int filas) {
+        assert posicionI >= 0 && posicionI < columnas : "PosiciónI debe estar dentro de los límites (0 a columnas-1)";
+        assert posicionJ >= 0 && posicionJ < filas : "PosiciónJ debe estar dentro de los límites (0 a filas-1)";
 
-        assert numeroPuestos != null && !numeroPuestos.isBlank(): "El numero de puestos no puede ser nulo";
-        assert posicionX != null && !posicionX.isBlank(): "La posicion X no puede ser nula";
-        assert posicionY != null && !posicionY.isBlank(): "La posicion Y no puede ser nula";
-        
-        this.numeroPuestos = numeroPuestos;
-        this.posicionX = posicionX;
-        this.posicionY = posicionY;
+        this.posicionI = posicionI;
+        this.posicionJ = posicionJ;
+        this.vehiculo = vehiculo;
     }
 
-    /**
-     * Clase para obtener un numero de puestos
-     * 
-     * @return
-     */
-    public String getNumeroPuestos() {
-        return numeroPuestos;
+    public int getPosicionI() {
+        return posicionI;
     }
 
-    /**
-     * Clase para obtener una posición X
-     * 
-     * @return
-     */
-    public String getPosicionX() {
-        return posicionX;
+    public void setPosicionI(int posicionI) {
+        this.posicionI = posicionI;
     }
 
-    /**
-     * Clase para obtener una posicion Y
-     * 
-     * @return
-     */
-    public String getPosicionY() {
-        return posicionY;
+    public int getPosicionJ() {
+        return posicionJ;
     }
 
+    public void setPosicionJ(int posicionJ) {
+        this.posicionJ = posicionJ;
+    }
+
+    public boolean estaOcupado() {
+        return vehiculo != null;
+    }
+
+    public void ocuparPuesto(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public void liberarPuesto() {
+        this.vehiculo = null;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
 }
