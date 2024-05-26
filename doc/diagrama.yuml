@@ -1,3 +1,30 @@
-// {type: class}
+// {type:class}
+// {direction:leftToRight}
+// {generate:true}
 
-[Parqueadero]
+[Parqueadero| |+Constructor(columnas:int, filas:int); +getCantidadPuestos():int; +verificarDisponibilidad(int posicionI, int posicionJ):Logico; +ocuparPuesto(int posicionI, int posicionJ, Vehiculo vehiculo); +buscarYParquearVehiculo(Vehiculo vehiculo): Logico; +liberarPuesto(int posicionI, int posicionJ); +obtenerPropietario(int posicionI, int posicionJ):String; -validarPlacaMotoExiste(String placa):Logico; -validarPlacaCarroExiste(String placa):Logico; +generarReporteDiario(LocalDateTime feca); +generarReporteMensual(int mes, int año); -inicializarReporte(); -actualizarReporte(Registro registro, Map<TipoVehiculo, Double> reporte); ]
+[<<abstract>>;Vehiculo|-placa:String;-modelo:int|+Constructor(placa:String, modelo:int, propietario:Propietario); +getHorasEstacionado():int; +setHorasEstacionado(int horasEstacionado); +getTarifaHora():double; +setTarifaHora(double tarifaHora); +getRegistro():Registro; +setRegistro(Registro registro); +calcularTarifa():abstract;]
+[Puesto|-posicionI:int;-posicionJ:int|+Constructor(posicionI:int, posicionJ:int, vehiculo:Vehiculo, columnas:int, filas:int);+estaOcupado():Logico;+ocuparPuesto(Vehiculo vehiculo);+liberarPuesto()]
+[Propietario|-nombre:String|+Constructor(nombre:String);+getNombre():String;+setNombre(String nombre);]
+[Carro| |+Constructor(placa:String, modelo:int, propietario:Propietario, tipoCarro:TipoCarro);+calcularTarifa():double;+getTarifaPorHora():double]
+[Moto|-velocidadMax:int|+Constructor(placa:String, modelo:int, propietario:Propietario, tipoMoto:TipoMoto, velocidadMax:int);+calcularTarifa():double;+getTarifaPorHora():double]
+[Registro|-fechaEntrada:Fecha;-fechaSalida:Fecha|+Constructor(fechaEntrada:Fecha, fechaSalida:Fecha, vehiculo:Vehiculo); +calcularCosto():double]
+[CalculadorCosto| |+calcularCosto(fechaEntrada:Fecha, fechaSalida:Fecha, tarifaPorHora:double)]
+[<<Enum>>;TipoVehiculo|MOTO;CARRO]
+[<<Enum>>;TipoMoto|CLASICA;HIBRIDA]
+[<<Enum>>;TipoCarro|CAMIONETA;DEPORTIVO]
+
+
+[Parqueadero]<>1-*>[<<abstract>>;Vehiculo]
+[Parqueadero]<>1-*>[Puesto]
+[Parqueadero]<>1-1>[Registro]
+[<<abstract>>;Vehiculo]1-1>[Propietario]
+[<<abstract>>;Vehiculo]1-1>[<<Enum>>;TipoVehiculo]
+[<<abstract>>;Vehiculo]^-[Carro]
+[<<abstract>>;Vehiculo]^-[Moto]
+[Carro]1-1>[<<Enum>>;TipoCarro]
+[Moto]1-1>[<<Enum>>;TipoMoto]
+[<<abstract>>;Vehiculo]<1-1[Registro]
+[Registro]1-1>[CalculadorCosto]
+
+
