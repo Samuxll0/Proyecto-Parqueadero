@@ -225,6 +225,7 @@ public class Parqueadero {
 
     private void actualizarReporte(Registro registro, Map<TipoVehiculo, Double> reporte) {
         double costo = registro.calcularCosto();
+       
         Vehiculo vehiculo = registro.getVehiculo();
 
         if (vehiculo instanceof Moto) {
