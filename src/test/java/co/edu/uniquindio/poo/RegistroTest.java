@@ -20,7 +20,7 @@ class RegistroTest {
 
         propietario = new Propietario("John Doe");
 
-        carro = new Carro(TipoCarro.CARRO, "ABC123", 2021, propietario);
+        carro = new Carro(TipoCarro.CAMIONETA, "ABC123", 2021, propietario);
 
         LocalDateTime fechaEntrada = LocalDateTime.now().minusHours(2);
 

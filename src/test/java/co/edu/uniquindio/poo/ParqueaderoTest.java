@@ -24,7 +24,7 @@ class ParqueaderoTest {
         propietario1 = new Propietario("John Doe");
         propietario2 = new Propietario("Jane Doe");
 
-        carro = new Carro(TipoCarro.CARRO, "ABC123", 2021, propietario1);
+        carro = new Carro(TipoCarro.CAMIONETA, "ABC123", 2021, propietario1);
         moto = new Moto("XYZ123", 2022, propietario2, 120, TipoMoto.MOTO_HIBRIDA);
     }
 

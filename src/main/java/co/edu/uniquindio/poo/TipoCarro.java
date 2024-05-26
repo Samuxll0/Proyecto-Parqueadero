@@ -1,7 +1,6 @@
 package co.edu.uniquindio.poo;
 
 public enum TipoCarro {
-    CARRO(TipoVehiculo.CARRO), 
     CAMIONETA(TipoVehiculo.CARRO), 
     DEPORTIVO(TipoVehiculo.CARRO);
 

@@ -16,7 +16,7 @@ class PuestoTest {
 
         propietario = new Propietario("John Doe");
 
-        vehiculo = new Carro(TipoCarro.CARRO, "ABC123", 2021, propietario);
+        vehiculo = new Carro(TipoCarro.CAMIONETA, "ABC123", 2021, propietario);
 
         puesto = new Puesto(1, 1, vehiculo, 3, 3); // 3x3 grid, valid position
     }
