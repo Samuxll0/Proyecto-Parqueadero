@@ -36,7 +36,7 @@ public class Moto extends Vehiculo {
 
     @Override
     public double getTarifaPorHora() {
-        if (velocidadMaxima >= 0 && velocidadMaxima <= 100) {
+        if (velocidadMaxima > 0 && velocidadMaxima <= 100) {
             return 5.0;
         } else if (velocidadMaxima > 100 && velocidadMaxima <= 150) {
             return 7.0;
